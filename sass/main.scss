@@ -1,1 +1,495 @@
 // main SASS file
+@import 'partials/variables';
+@import 'partials/mixin';
+@import 'partials/queries';
+
+*{
+    padding:0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    &:after,
+    &:before{
+        -webkit-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+}
+
+html{
+  font-size: 16px;
+  font-family: $sanserif-font;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4{
+    font-family: $serif-font;
+}
+
+ul{
+    list-style: none;
+}
+
+/***********************************************
+                SPECIAL
+***********************************************/
+
+.clearfix{
+  &::after{
+    display:table;
+    clear: both;
+    content: "";
+  }
+}
+
+/***********************************************
+                LAYOUT
+***********************************************/
+
+.bg{
+  &-header{
+    background-color: $light-blue;
+    color: $dark-grey;
+    border-bottom:1rem solid $med-blue;
+    border-top:1rem solid $dark-blue;
+    position: relative;
+    &:before,&:after{
+      @include bgheader
+    }
+    &:before{
+      left:0;
+    }
+    &:after{
+      right:0;
+    }
+  }
+
+  &-focal{
+    background-color: $light-brown;
+    color: $dark-brown;
+  }
+
+  &-content1{
+    background-color: $white;
+    color: $dark-grey;
+  }
+
+  &-content2{
+      background-color: $light-blue;
+      color: $dark-blue;
+  }
+
+  &-footer{
+    background-color: $white;
+    color: $light-grey;
+  }
+}
+
+header{
+  @include width400;
+  position: relative;
+  h1{
+      width: 100%;
+      padding: 0 2rem;
+      letter-spacing: 0.1rem;
+      color: $dark-brown;
+    i{
+      &.fa-lg{
+        display:block;
+        width: 25%;
+        float:left;
+        font-size: 7rem;
+        line-height: 12.7936rem;
+        color: $light-brown;
+        ~span{
+          float: right;
+          width: 75%;
+          font-size: 3.998rem;
+          padding-left: 1rem;
+          text-align: right;
+        }
+      }
+    }
+  }
+  nav{
+    width: 100%;
+    padding:2rem 0;
+    clear: both;
+    >ul{
+      >li{
+        float: none;
+        >a{
+          display:block;
+          text-align: center;
+          text-decoration: none;
+          color: $dark-grey;
+          font-size: 1.414rem;
+          letter-spacing: 0.25rem;
+          border:1px solid $light-grey;
+          border-bottom: none;
+          padding:1.0rem 2rem;
+          line-height: 1;
+          background-color:$white;
+          &:hover{
+            font-weight: 700;
+            color:$dark-brown;
+          }
+        }
+      }
+    }
+  }
+}
+
+section{
+  &.focal{
+    @include width400;
+    h2{
+      font-size: 1.999rem;
+      line-height: 1.2;
+      padding: 2rem 2rem 1rem 2rem;
+    }
+    .author{
+        font-size: 1rem;
+        padding: 0.2rem 2rem 2rem;
+    }
+  }
+  &.content1{
+    padding: 2rem 0;
+    h3{
+        font-size:1.999rem;
+        padding: 0.2rem 2rem 2rem;
+        i{
+            vertical-align:middle;
+            padding-right: 2rem;
+        }
+    }
+    p{
+      font-size: 1.414rem;
+      padding: 0.5rem 2rem 2rem;
+    }
+  }
+  &.content2{
+    padding: 2rem 0;
+    h3{
+        font-size: 1.999rem;
+        padding: 1rem 2rem 0.5rem;
+    }
+    h4{
+        font-size: 1.999rem;
+        padding: 1rem 2rem 0rem;
+    }
+    p{
+        font-size: 1.414rem;
+        padding: 0.5rem 2rem 1rem;
+    }
+    li{
+        padding: 0.5rem 2rem;
+        font-size: 1.414rem;
+    }
+  }
+}
+.row{
+    clear: both;
+}
+.col-2{
+  @include col2;
+}
+footer{
+  h4{
+      font-size: 1.414rem;
+      padding: 0.5rem 2rem;
+      color: $dark-brown;
+  }
+  p{
+      font-size: 1rem;
+      padding: 0.5rem 2rem;
+      color: $dark-grey;
+  }
+  .fa-circle{
+      color: $dark-grey;
+  }
+  h4{
+    &[lang=de]{
+      display:block;
+    }
+    &[lang=en],&[lang=ar],&[lang=ru]{
+      display:none;
+    }
+  }
+  .col-2{
+    &:first-child{
+      border-left: 0;
+    }
+  }
+  padding:2rem 0;
+}
+
+/***********************************************
+                MEDIA QUERIES
+***********************************************/
+@include phone(900px){
+  header{
+    width: 700px;
+    margin: 0 auto;
+    min-height: 8rem;
+    &:before,&:after{
+      width:230px;
+    }
+    h1{
+        color: $dark-brown;
+      i{
+        &.fa-lg{
+          @include fa-lg{
+            color: $dark-brown;
+          }
+        }
+      }
+    }
+    nav{
+      @include media-nav;
+      >ul>li{
+          width:20%;
+          float: left;
+          >a{
+            @include media-nav-ul-li-a{
+              min-height: 6rem;
+              padding:1.0rem;
+              font-size: 1rem;
+            }
+            &:last-child{
+              border-right:1px solid $light-grey;
+            }
+          }
+        }
+    }
+  }
+  section.focal,
+  section.content1,
+  section.content2,
+  footer{
+    @include width700;
+  }
+  .col-4{
+    @include col4;
+  }
+  section{
+    &.content2{
+      h4,li{
+        font-size: 1.414rem;
+      }
+    }
+  }
+  footer{
+    .fa-circle{
+        color: $med-blue;
+    }
+    .col-2{
+      &:last-child{
+        unicode-bidi: bidi-override;
+        direction: rtl;
+      }
+    }
+    h4[lang=ar]{
+      display:block;
+    }
+    h4[lang=de],
+    h4[lang=en],
+    h4[lang=ru]{
+      display:none;
+    }
+  }
+}
+
+@include tablet(1400px){
+  header{
+    @include width900;
+    &:before,&:after{
+      width:300px;
+    }
+    h1{
+        color: $dark-blue;
+      i{
+        &.fa-lg{
+          @include fa-lg{
+            color: $dark-blue;
+          }
+        }
+      }
+    }
+    nav{
+      @include media-nav;
+      >ul>li{
+        @include media-nav-ul-li{
+          background: $white;
+        }
+        >a{
+          @include media-nav-ul-li-a{
+            min-height: 2rem;
+            padding: 0 1.0rem;
+            margin: 1.0rem 0;
+            font-size: 1rem;
+          }
+        }
+        &:first-child a{
+          border-left:none;
+        }
+      }
+    }
+  }
+  section.focal,
+  section.content1,
+  section.content2,
+  footer{
+    @include width900;
+  }
+  section{
+    &.focal{
+      h2,p.author{
+        @include width600;
+      }
+    }
+  }
+  .col-3{
+    @include col3;
+  }
+  .col-4{
+    @include col4-tablet-desktop;
+  }
+  section{
+    &.content1{
+      h3{
+        font-size: 1.999rem;
+        font-weight: 100;
+        .fa-2x{
+            font-size: 1.999rem;
+            padding-right: 1rem;
+        }
+      }
+    }
+    &.content2{
+      h4,li{
+        font-size: 1.414rem;
+      }
+      p{
+        font-size: 1rem;
+        font-weight: 400;
+      }
+    }
+  }
+  footer{
+    .fa-circle{
+        color: $light-brown;
+    }
+    h4[lang=ru]{
+      display:block;
+    }
+    h4[lang=de],
+    h4[lang=ar],
+    h4[lang=en]{
+      display:none;
+    }
+  }
+}
+
+@include desktop(1401px){
+  header{
+    @include width1400;
+    &:before,&:after{
+      width:450px;
+    }
+    h1{
+        color: $dark-brown;
+      i{
+        &.fa-lg{
+          @include fa-lg{
+            color: $dark-brown;
+          }
+        }
+      }
+    }
+    nav{
+      @include media-nav;
+      >ul>li{
+        @include media-nav-ul-li{
+          background: $white;
+        }
+        >a{
+          @include media-nav-ul-li-a{
+            min-height: 2rem;
+            padding: 0 1.0rem;
+            margin: 1.0rem 0;
+            font-size: 1.414rem;
+          }
+        }
+       //  &:first-child a{
+       //     border-left:none;
+       // }
+      }
+    }
+  }
+  section.focal,
+  section.content1,
+  section.content2,
+  footer{
+    @include width1400;
+  }
+  section{
+    &.focal{
+      p.author{
+        @include width600;
+      }
+      h2{
+        @include width600;
+        font-size: 3.998rem;
+      }
+    }
+  }
+  .col-3{
+    @include col3;
+  }
+  .col4{
+    @include col4-tablet-desktop;
+  }
+  section{
+    &.content1{
+      h3{
+        font-size: 2.827rem;
+        font-weight: 100;
+        .fa-2x{
+          font-size: 2.827rem;
+          padding-right: 1rem;
+          vertical-align: middle;
+        }
+      }
+    }
+    &.content2{
+      h4,
+      li{
+        font-size: 1.999rem;
+      }
+      p{
+          font-size: 1.414rem;
+          font-weight: 400;
+      }
+    }
+  }
+  footer{
+    p{
+      font-size: 1.414rem;
+      letter-spacing: 0.2rem;
+      &:last-child{
+        color: $light-grey;
+      }
+    }
+    .fa-circle{
+        color: $med-blue;
+    }
+    h4{
+      &[lang=en]{
+        display:block;
+      }
+      &[lang=de],&[lang=ar],&[lang=ru]{
+        display:none;
+      }
+    }
+  }
+}

@@ -109,7 +109,7 @@ section.content1{
     padding: 2rem 0;
 }
 section.content2{
-    padding:2rem 0;    
+    padding:2rem 0;
 }
 .row{
     clear: both;
@@ -128,7 +128,9 @@ footer{
     padding:2rem 0;
 }
 footer p:last-child{
+
 }
+
 /***********************************************
                 NAVIGATION
 ***********************************************/
@@ -140,10 +142,10 @@ header nav>ul>li>a{
     display:block;
     text-align: center;
     text-decoration: none;
-    color: #222;    
+    color: #222;
     font-size: 1.414rem;
     letter-spacing: 0.25rem;
-    border:1px solid #d4d4d4; 
+    border:1px solid #d4d4d4;
     border-bottom: none;
     padding:1.0rem 2rem;
     line-height: 1;
@@ -291,19 +293,19 @@ footer h4[lang=ru]{
         line-height: 2rem;
         min-height: 6rem;
         border:none;
-        border-left:1px solid #d4d4d4; 
+        border-left:1px solid #d4d4d4;
         padding:1.0rem;
         background-color: #fff;
     }
     header nav>ul>li>a:last-child{
         border-right:1px solid #d4d4d4;
     }
-    section.focal, 
+    section.focal,
     section.content1,
     section.content2,
     footer{
-        width: 700px; 
-        margin: 0 auto;    
+        width: 700px;
+        margin: 0 auto;
     }
     .col-4{
         width:50%;
@@ -380,7 +382,7 @@ footer h4[lang=ru]{
         line-height: 2rem;
         min-height: 2rem;
         border:none;
-        border-left:1px solid #d4d4d4; 
+        border-left:1px solid #d4d4d4;
         padding: 0 1.0rem;
         margin: 1.0rem 0;
         background-color: #fff;
@@ -388,19 +390,19 @@ footer h4[lang=ru]{
     header nav>ul>li:first-child a{
         border-left:none;
     }
-    section.focal, 
+    section.focal,
     section.content1,
     section.content2,
     footer{
-        width: 900px; 
-        margin: 0 auto;    
+        width: 900px;
+        margin: 0 auto;
     }
     section.focal h2{
-        width: 600px; 
+        width: 600px;
         margin: 0 auto;
     }
     section.focal p.author{
-        width: 600px; 
+        width: 600px;
         margin: 0 auto;
     }
     .col-3{
@@ -427,7 +429,7 @@ footer h4[lang=ru]{
         font-size: 1.999rem;
         padding-right: 1rem;
     }
-    
+
     section.content2 h4{
         font-size: 1.414rem;
     }
@@ -442,7 +444,7 @@ footer h4[lang=ru]{
         color: #C9A689;
     }
     footer h4[lang=ru]{
-       display:block; 
+       display:block;
     }
     footer h4[lang=de],
     footer h4[lang=ar],
@@ -498,7 +500,7 @@ footer h4[lang=ru]{
         line-height: 2rem;
         min-height: 2rem;
         border:none;
-        border-left:1px solid #d4d4d4; 
+        border-left:1px solid #d4d4d4;
         padding:0 1.0rem;
         margin:1.0rem 0;
         background-color: #fff;
@@ -506,20 +508,20 @@ footer h4[lang=ru]{
     header nav>ul>li:first-child a{
         border-left:none;
     }
-    section.focal, 
+    section.focal,
     section.content1,
     section.content2,
     footer{
-        width: 1400px; 
-        margin: 0 auto;    
+        width: 1400px;
+        margin: 0 auto;
     }
     section.focal h2{
         font-size: 3.998rem;
-        width: 600px; 
+        width: 600px;
         margin: 0 auto;
     }
     section.focal p.author{
-        width: 600px; 
+        width: 600px;
         margin: 0 auto;
     }
     .col-3{
@@ -547,7 +549,7 @@ footer h4[lang=ru]{
         padding-right: 1rem;
         vertical-align: middle;
     }
-    
+
     section.content2 h4{
         font-size: 1.999rem;
     }
@@ -568,14 +570,14 @@ footer h4[lang=ru]{
     footer .fa-circle{
         color: #89C0C9;
     }
-    
+
     footer h4[lang=en]{
-       display:block; 
+       display:block;
     }
     footer h4[lang=de],
     footer h4[lang=ar],
     footer h4[lang=ru]{
         display:none;
     }
-    
+
 }
