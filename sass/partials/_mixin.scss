@@ -1,0 +1,99 @@
+@mixin bgheader{
+    content:"";
+    position:absolute;
+    bottom:-1rem;
+    width:30%;
+    height:1rem;
+    background-color: $dark-blue;
+    @content;
+}
+
+@mixin width400{
+  width: 400px;
+  margin: 0 auto;
+}
+
+@mixin width700{
+  width: 700px;
+  margin: 0 auto;
+}
+
+@mixin width900{
+  width: 900px;
+  margin: 0 auto;
+}
+
+@mixin width600{
+  width: 600px;
+  margin: 0 auto;
+}
+
+@mixin width1400{
+  width: 1400px;
+  margin: 0 auto;
+}
+
+@mixin fa-lg{
+  display:inline;
+  vertical-align:baseline;
+  float:none;
+  font-size: 4rem;
+  line-height: 6.3968rem;
+  ~span{
+    float: none;
+    letter-spacing: 0.25rem;
+    text-align: left;
+  }
+  @content;
+}
+
+@mixin media-nav{
+  position: static;
+  clear:both;
+  width: 100%;
+  padding: 0;
+}
+
+@mixin media-nav-ul-li{
+  width:20%;
+  float: left;
+  @content;
+}
+@mixin media-nav-ul-li-a{
+  line-height: 2rem;
+  border:none;
+  border-left:1px solid $light-grey;
+  background-color: $white;
+  @content;
+}
+
+@mixin col2{
+  width:50%;
+  float:left;
+  padding-bottom: 2rem;
+  border-left:1px solid $dark-blue;
+  margin-bottom: 2rem;
+}
+
+@mixin col4{
+  float:left;
+  width: 50%;
+}
+
+@mixin col4-tablet-desktop{
+  width:22%;
+  margin-left: 4%;
+  float:left;
+  &:first-child{
+      margin-left: 0;
+  }
+}
+
+@mixin col3{
+  float:left;
+  width: 30%;
+  margin-left: 5%;
+  &:first-child{
+    margin-left: 0;
+  }
+}
