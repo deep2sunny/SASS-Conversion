@@ -2,6 +2,10 @@
 Sample Site to be used as practice in converting CSS to SASS
 In your SASS files you need to meet the following requirements:
 
+My File Size : 6489 bytes
+
+Instructions:
+
 1. Three partials _variables.scss, _mixins.scss, _queries.scss which get imported into your main.scss file.
 
 2. Only one CSS file created - main.css
